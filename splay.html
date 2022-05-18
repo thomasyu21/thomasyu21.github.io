@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+    <style>
+    	body{
+    		padding:1%;
+	}
+    </style>
+    <head>
+        <title> Splay Trees </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    </head>
+
+    <body>
+    	<h1>Splay Trees</h1>
+    	<p>Splay Trees were first invented by Daniel Sleator and Robert Tarjan in 1985. Splay trees build upon a binary search tree, with the addition of one operation called splaying.</p>
+    	<p>So, lets focus on binary search trees first.</p>
+    	<h2>Binary Search Trees</h2>
+    	<h4>Terminology</h4>
+    	<ul> 
+	    	<li>Node: an individual item in the tree</li>
+	    	<li>Key: the value of a node</li>
+	    	<li>Root: the top of the tree (the first node accessed in a search)</li>
+	    	<li>Edge: the link between two nodes</li>
+	    	<li>Parent: a branch to any other node</li>
+	    	<li>Child: a node with a link to a parent node</li>
+	    	<li>Siblings: nodes with the same parent</li>
+	    	<li>Leaf: a node with no children</li>
+	    	<li>Subtree: a section of the overall tree</li>
+	</ul>
+	<img src="https://miro.medium.com/max/1400/0*OJaD7DmFOVdgFfiZ.png">
+    	<h4>How it works</h4>
+    	<p>Binary search trees follow two rules. First, each parent is limited to a max of two children. Second, the key of the left child must always be less than the key of parent and the key of the right child must always be greater than the key of the parent. </p>
+    	
+    	<h2>Heaps</h2>
+    	<p>Heaps are another type of data structure that makes use of a tree. However, unlike the binary search tree, it does not have the same relationship between parent and children nodes. Instead, the key of the parent is always greater than both children (max-heap) or less than both children (min-heap). This allows us to access the greatest or smallest value in the tree the fastest as it will be at the root node.</p>
+    	<img src="https://i.imgur.com/1mghTRv.png">
+    	<p>But what if you wanted quick access to nodes that didn't have the greatest or smallest key in the tree? That's where splay trees can help.</p>
+    	<h2>Splaying</h2>
+    	<img src="https://d18l82el6cdm1i.cloudfront.net/uploads/1IXcakC4O9-splay.gif">
+    	<p>A splay tree is essentially a BST with the extra operation of splaying. To splay a node is to bring that node up to the root. Let's go over the basic steps of splaying.</p>
+    	<h4>Zig</h4>
+    	<img src="http://www.btechsmartclass.com/data_structures/ds_images/Zig%20Rotation.png">
+    	<h4>Zag</h4>
+    	<img src="http://www.btechsmartclass.com/data_structures/ds_images/Zag%20Rotation.png">
+    	<h4>Zig-Zig</h4>
+    	<img src="http://www.btechsmartclass.com/data_structures/ds_images/Zig-Zig.png">
+    	<h4>Zag-Zag</h4>
+    	<img src="http://www.btechsmartclass.com/data_structures/ds_images/Zag-Zag.png">
+    	<p>For Zig-Zig and Zag-Zag, splay the parent node first, then the desired node!</p>
+    	<h4>Zig-Zag</h4>
+    	<img src="http://www.btechsmartclass.com/data_structures/ds_images/Zig-Zag.png">
+    	<h4>Zag-Zig</h4>
+    	<img src="http://www.btechsmartclass.com/data_structures/ds_images/Zag-Zig.png">
+    	<br>
+    	<a href="https://people.ksp.sk/~kuko/gnarley-trees/Splay.html">Go mess around with some splay trees!</a>
+
+    </body>
+</html>
